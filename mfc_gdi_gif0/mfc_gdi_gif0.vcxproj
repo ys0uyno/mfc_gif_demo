@@ -99,6 +99,7 @@
     <None Include="res\mfc_gdi_gif0.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gdi_gif.h" />
     <ClInclude Include="mfc_gdi_gif0.h" />
     <ClInclude Include="mfc_gdi_gif0Dlg.h" />
     <ClInclude Include="Resource.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gdi_gif.cpp" />
     <ClCompile Include="mfc_gdi_gif0.cpp" />
     <ClCompile Include="mfc_gdi_gif0Dlg.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -119,4 +121,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="mfc_gdi_gif0.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
