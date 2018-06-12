@@ -57,12 +57,15 @@ Cmfc_gdi_gif0Dlg::Cmfc_gdi_gif0Dlg(CWnd* pParent /*=NULL*/)
 void Cmfc_gdi_gif0Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_STATIC_GIF, m_gif);
 }
 
 BEGIN_MESSAGE_MAP(Cmfc_gdi_gif0Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON_PLAY, &Cmfc_gdi_gif0Dlg::OnBnClickedButtonPlay)
+	ON_BN_CLICKED(IDC_BUTTON_STOP, &Cmfc_gdi_gif0Dlg::OnBnClickedButtonStop)
 END_MESSAGE_MAP()
 
 
@@ -98,6 +101,7 @@ BOOL Cmfc_gdi_gif0Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	m_gif.load(L"sample.gif");
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -151,3 +155,16 @@ HCURSOR Cmfc_gdi_gif0Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void Cmfc_gdi_gif0Dlg::OnBnClickedButtonPlay()
+{
+	// TODO: Add your control notification handler code here
+	m_gif.play();
+}
+
+
+void Cmfc_gdi_gif0Dlg::OnBnClickedButtonStop()
+{
+	// TODO: Add your control notification handler code here
+	m_gif.stop();
+}

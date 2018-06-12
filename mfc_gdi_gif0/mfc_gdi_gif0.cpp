@@ -39,6 +39,11 @@ Cmfc_gdi_gif0App theApp;
 
 BOOL Cmfc_gdi_gif0App::InitInstance()
 {
+	// Init GDI+
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	ULONG_PTR gdiplusToken;
+	Gdiplus::Status state = GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
 	// visual styles.  Otherwise, any window creation will fail.

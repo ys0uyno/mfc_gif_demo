@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "gdi_gif.h"
 
 
 // Cmfc_gdi_gif0Dlg dialog
@@ -29,4 +30,8 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButtonPlay();
+	gdi_gif m_gif;
+	afx_msg void OnBnClickedButtonStop();
 };
